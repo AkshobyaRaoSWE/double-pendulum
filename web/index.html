@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Pendulum Chaos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Double Pendulum &middot; Chaos</h1>
+    <p class="sub">Lagrangian dynamics &middot; RK4 integration &middot; ghost copies diverge from a 0.001&nbsp;rad nudge</p>
+  </header>
+
+  <main>
+    <section class="stage">
+      <canvas id="pend" width="640" height="640"></canvas>
+    </section>
+
+    <aside class="controls">
+      <label>Start angle 1 (rad)<output id="th1Out">2.0</output>
+        <input type="range" id="th1" min="0.2" max="3.1" step="0.05" value="2.0" />
+      </label>
+      <label>Start angle 2 (rad)<output id="th2Out">2.0</output>
+        <input type="range" id="th2" min="0.2" max="3.1" step="0.05" value="2.0" />
+      </label>
+      <label>Mass ratio m2/m1<output id="m2Out">1.0</output>
+        <input type="range" id="m2" min="0.2" max="3" step="0.1" value="1.0" />
+      </label>
+      <label>Length ratio l2/l1<output id="l2Out">1.0</output>
+        <input type="range" id="l2" min="0.3" max="1.8" step="0.05" value="1.0" />
+      </label>
+      <label>Ghost pendulums<output id="ghostsOut">6</output>
+        <input type="range" id="ghosts" min="1" max="16" step="1" value="6" />
+      </label>
+
+      <button id="run">Run</button>
+      <button id="replay" class="ghost">Replay</button>
+      <p class="hint" id="hint"></p>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

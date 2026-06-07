@@ -1,0 +1,45 @@
+:root {
+  --bg: #07080d;
+  --panel: #12141d;
+  --line: #20232e;
+  --text: #e8eaf2;
+  --muted: #828aa0;
+  --accent: #7c5cff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(900px 600px at 30% -10%, #141828, var(--bg));
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+header { padding: 22px 28px 10px; border-bottom: 1px solid var(--line); }
+header h1 { margin: 0; font-size: 22px; letter-spacing: 0.5px; }
+.sub { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+
+main { display: flex; gap: 22px; padding: 22px 28px; flex-wrap: wrap; align-items: flex-start; }
+
+.stage canvas {
+  background: #06070b; border: 1px solid var(--line); border-radius: 12px;
+  display: block;
+}
+
+.controls {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px; width: 240px; display: flex; flex-direction: column; gap: 14px;
+}
+.controls label { font-size: 13px; color: var(--muted); display: block; }
+.controls output { float: right; color: var(--text); font-weight: 600; }
+.controls input[type=range] { width: 100%; accent-color: var(--accent); margin-top: 6px; }
+
+button {
+  background: var(--accent); color: #fff; border: none; padding: 11px;
+  border-radius: 7px; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+button:hover { filter: brightness(1.12); }
+button.ghost { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+
+.hint { font-size: 12px; color: var(--muted); min-height: 16px; }
